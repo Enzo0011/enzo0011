@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="cv-img" onclick="goToCV()">
+    <div class="cv-img" onclick="currentSlideNumber = 1;nextItem();setTimeout(() => {currentSlideNumber = 2;nextItem();}, 2000);">
         <span class="badge">1</span>
     </div>
     <div class="container">
