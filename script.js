@@ -146,3 +146,12 @@ function previousItem() {
     $currentSlide.removeClass("down-scroll").addClass("up-scroll");
     setTimeout(startAnimation, 1000);
 }
+
+function goToCV() {
+    currentSlideNumber = 1;
+    nextItem();
+    setTimeout(() => {
+        currentSlideNumber = 2;
+        nextItem();
+    }, 2000);
+}
