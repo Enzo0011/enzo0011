@@ -148,10 +148,13 @@ function previousItem() {
 }
 
 function goToCV() {
+    alert(1);
     currentSlideNumber = 1;
+    alert(2);
     nextItem();
     setTimeout(() => {
         currentSlideNumber = 2;
         nextItem();
     }, 2000);
+    alert(3);
 }
