@@ -1,4 +1,3 @@
-alert(12);
 var ml4 = {};
 ml4.opacityIn = [0, 1];
 ml4.scaleIn = [0.2, 1];
@@ -58,6 +57,9 @@ textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='let
 var textWrapper = document.querySelector('.ml14 .letters');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
+var textWrapper = document.querySelector('.ml7 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
 function startAnimation() {
     anime.timeline({ loop: false })
         .add({
@@ -87,16 +89,27 @@ function startAnimation() {
             offset: '-=600',
             delay: (el, i) => 150 + 25 * i
         });
+    anime.timeline({ loop: false })
+        .add({
+            targets: '.ml7 .letter',
+            translateY: ["1.1em", 0],
+            translateX: ["0.55em", 0],
+            translateZ: 0,
+            rotateZ: [180, 0],
+            duration: 750,
+            easing: "easeOutExpo",
+            delay: (el, i) => 50 * i
+        });
 }
 
 
-var ticking = false;
-var isFirefox = (/Firefox/i.test(navigator.userAgent));
-var isIe = (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(navigator.userAgent));
-var scrollSensitivitySetting = 30;
-var slideDurationSetting = 600;
-var currentSlideNumber = 0;
-var totalSlideNumber = $(".background").length;
+var ticking = false,
+    isFirefox = (/Firefox/i.test(navigator.userAgent)),
+    isIe = (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(navigator.userAgent)),
+    scrollSens = 30,
+    slideTime = 500,
+    current = 0,
+    total = $(".background").length;
 
 function parallaxScroll(evt) {
     if (isFirefox) {
@@ -107,27 +120,27 @@ function parallaxScroll(evt) {
         delta = evt.wheelDelta;
     }
 
-    if (ticking != true) {
-        if (delta <= -scrollSensitivitySetting) {
+    if (!ticking) {
+        if (delta <= -scrollSens) {
             ticking = true;
-            if (currentSlideNumber !== totalSlideNumber - 1) {
-                currentSlideNumber++;
+            if (current !== total - 1) {
+                current++;
                 nextItem();
             }
-            slideDurationTimeout(slideDurationSetting);
+            slideTimeout(slideTime);
         }
-        if (delta >= scrollSensitivitySetting) {
+        if (delta >= scrollSens) {
             ticking = true;
-            if (currentSlideNumber !== 0) {
-                currentSlideNumber--;
+            if (current !== 0) {
+                current--;
             }
             previousItem();
-            slideDurationTimeout(slideDurationSetting);
+            slideTimeout(slideTime);
         }
     }
 }
 
-function slideDurationTimeout(slideDuration) {
+function slideTimeout(slideDuration) {
     setTimeout(function () {
         ticking = false;
     }, slideDuration);
@@ -137,25 +150,64 @@ var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
 window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
 
 function nextItem() {
-    var $previousSlide = $(".background").eq(currentSlideNumber - 1);
+    var $previousSlide = $(".background").eq(current - 1);
     $previousSlide.removeClass("up-scroll").addClass("down-scroll");
     startAnimation();
 }
 
 function previousItem() {
-    var $currentSlide = $(".background").eq(currentSlideNumber);
+    var $currentSlide = $(".background").eq(current);
     $currentSlide.removeClass("down-scroll").addClass("up-scroll");
     setTimeout(startAnimation, 1000);
 }
 
-function goToCV() {
-    alert(1);
-    currentSlideNumber = 1;
-    alert(2);
-    nextItem();
-    setTimeout(() => {
-        currentSlideNumber = 2;
-        nextItem();
-    }, 2000);
-    alert(3);
+
+function goTo(dest) {
+    if (dest >= total) return;
+    if (current < dest) {
+        for (i = current; i < dest; i++) {
+            current++;
+            nextItem();
+        }
+    } else if (current > dest) {
+        for (i = current; i > dest; i--) {
+            current--;
+            previousItem();
+        }
+    }
+}
+
+var visible = false;
+
+function showMenu() {
+    var menu = document.getElementsByClassName("menu")[0];
+    if (!visible) {
+        visible = !visible;
+        menu.style.animationPlayState = 'paused';
+        menu.childNodes[1].style.backgroundImage = "url(img/circled2.png)";
+        menu.childNodes[3].style.display = "unset";
+    } else {
+        visible = !visible;
+        menu.style.animationPlayState = 'running';
+        menu.childNodes[1].style.backgroundImage = "url(img/circled1.png)";
+        menu.childNodes[3].style.display = "none";
+    }
+}
+
+const comp = [
+    "<u>HTML</u> est la base de n'importe quel site internet, c'est donc par celà que j'ai commencé.",
+    "Le HTML n'est pas très élégant seul, alors j'y met du style avec <u>CSS</u>, un peu répétitif, donc j'ai appris le Sass.",
+    "Pour animer tout ça rien de mieux qu'une bonne connaissance en <u>Javascript</u>, je maitrise jQuery, React et d'autres, mais le <u>Javascript</u> natif est tout aussi intuitif.",
+    "Et pour le back-end ? J'utilise <u>Node.js</u> comme API, ou comme langage de scripting très réglièrement.",
+    "La plupart des sites utilisent encore <u>PHP</u>, il est important de le maitriser.",
+    "Qui n'a jamais appris <u>Python</u> ? Toujours utile pour les petites automatisations!",
+    "Ayant souvent travaillé avec des serveurs ou machines virtuelles, j'ai acquis une bonne maitrise générale de <u>linux</u>, et de <u>Bash</u>.",
+    "Mon ordinateur étant sous Windows, il est important que je connaisse les bases de <u>PowerShell</u>.",
+    "Switch, Router, Serveur Web, DNS, Proxy, Serveur Windows, Continuité de service, Haute disponibilités.<br>Toutes ces compétences ont été acquise lors de mon <u>BTS SIO</u>",
+    "Et j'ai un compte root-me, où je m'entraine et j'apprend énormément de choses en rapport avec la sécurité informatique.<br>Dans le monde d'aujourd'hui, rien de plus important !<br><a href='www.root-me.org/TcHp'>Disponible ici.</a>"
+]
+
+function competences(n) {
+    document.getElementsByClassName('content-subtitle')[7].style.display = 'none';
+    document.getElementsByClassName('content-subtitle')[6].innerHTML = comp[n];
 }

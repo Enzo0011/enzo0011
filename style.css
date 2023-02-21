@@ -77,6 +77,27 @@ a {
     line-height: 1em;
 }
 
+.ml7 {
+    position: relative;
+    font-weight: 900;
+    font-size: 3.7em;
+}
+
+.ml7 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+}
+
+.ml7 .letter {
+    transform-origin: 0 100%;
+    display: inline-block;
+    line-height: 1em;
+}
+
 @keyframes float {
     0% {
         transform: translateY(0px);
@@ -129,20 +150,37 @@ a {
     animation: float2 12s ease-in-out infinite;
 }
 
-.cv-img {
-    background-image: url(img/cv.png);
+.menu {
     z-index: 100;
     position: absolute;
-    width: 70px;
-    height: 70px;
+    width: 200px;
     top: 50px;
-    right: 20px;
+    left: 20px;
     background-size: contain;
     background-repeat: no-repeat;
-    animation: float2 6s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite;
 }
 
-.cv-img:hover {
+#menu-icon:hover {
+    cursor: pointer;
+}
+
+#menu-icon {
+    background-image: url(img/circled1.png);
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    filter: invert(1);
+}
+
+.menu-div {
+    height: 1px;
+    width: 100px;
+    background-color: rgba(255, 255, 255, .50);
+    margin: auto;
+}
+
+.h3-text {
     cursor: pointer;
 }
 
@@ -204,15 +242,23 @@ a {
     background-image: url(img/3.jpg);
 }
 
+.background:nth-child(4) {
+    background-image: url(img/4.jpg);
+}
+
 .background:nth-child(1) {
-    z-index: 3;
+    z-index: 4;
 }
 
 .background:nth-child(2) {
-    z-index: 2;
+    z-index: 3;
 }
 
 .background:nth-child(3) {
+    z-index: 2;
+}
+
+.background:nth-child(4) {
     z-index: 1;
 }
 
@@ -239,6 +285,7 @@ a {
 .content-subtitle {
     font-size: 2vh;
     z-index: 1;
+    font-weight: bold;
 }
 
 .background.up-scroll {
@@ -271,4 +318,119 @@ a {
 
 .background.down-scroll+.background:not(.down-scroll) .content-wrapper {
     transform: translateY(15vh);
+}
+
+.tooltip {
+    display: inline-block;
+    position: absolute;
+    text-align: left;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tooltip .top {
+    line-height: 1.7;
+    min-width: 200px;
+    width: 500%;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    padding: 10px 20px;
+    color: #FFFFFF;
+    background-color: #444444;
+    font-weight: normal;
+    font-size: 13px;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 99999999;
+    box-sizing: border-box;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.8s;
+}
+
+.tooltip:hover .top {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip .top i {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -12px;
+    width: 24px;
+    height: 12px;
+    overflow: hidden;
+}
+
+.tooltip .top i::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: #444444;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.comp-img {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.comp-img__inner {
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+    margin: 10px;
+}
+
+#comp :nth-child(1)>.comp-img__inner {
+    background-image: url(img/html.png);
+    background-position-x: 2px;
+}
+
+#comp :nth-child(2)>.comp-img__inner {
+    background-image: url(img/css.png);
+}
+
+#comp :nth-child(3)>.comp-img__inner {
+    background-image: url(img/js.png);
+}
+
+#comp :nth-child(4)>.comp-img__inner {
+    background-image: url(img/node.png);
+}
+
+#comp :nth-child(5)>.comp-img__inner {
+    background-image: url(img/php.png);
+}
+
+#comp :nth-child(6)>.comp-img__inner {
+    background-image: url(img/python.png);
+}
+
+#comp :nth-child(7)>.comp-img__inner {
+    background-image: url(img/bash.png);
+}
+
+#comp :nth-child(8)>.comp-img__inner {
+    background-image: url(img/powershell.png);
+}
+
+#comp :nth-child(9)>.comp-img__inner {
+    background-image: url(img/network.png);
+    filter: invert(1);
+}
+
+#comp :nth-child(10)>.comp-img__inner {
+    background-image: url(img/rootme.png);
+    filter: invert(1);
 }

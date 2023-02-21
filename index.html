@@ -10,9 +10,16 @@
 </head>
 
 <body>
-    <div class="cv-img"
-        onclick="currentSlideNumber=1;nextItem();setTimeout(() => {currentSlideNumber=2;nextItem();}, 2000);">
-        <span class="badge">1</span>
+    <div class="menu" onmouseleave="visible && showMenu();">
+        <div id="menu-icon" onclick="showMenu();">
+        </div>
+        <div style="text-align: center;display:none;">
+            <h3 class="h3-text" onclick="goTo(1);">Mon profil</h3>
+            <div class="menu-div"></div>
+            <h3 class="h3-text" onclick="goTo(2);">Mon CV</h3>
+            <div class="menu-div"></div>
+            <h3 class="h3-text" onclick="goTo(3);">Mes compétences</h3>
+        </div>
     </div>
     <div class="container">
         <section class="background">
@@ -23,6 +30,7 @@
                     <span class="letters letters-3">Mon</span>
                     <span class="letters letters-4">Portfolio</span>
                 </h1>
+                <br>
                 <p class="content-subtitle">Je m'appelle Enzo, j'ai 19 ans, <br>et l'informatique me passionne depuis
                     toujours.</p>
                 <br><br><br>
@@ -48,26 +56,76 @@
             <div class="content-wrapper back-dark">
                 <h1 class="ml14">
                     <span class="text-wrapper">
-                        <span class="letters">Voila, mon CV</span>
+                        <span class="letters">Mon CV</span>
                         <span class="line"></span>
                     </span>
                 </h1>
                 <p class="content-subtitle">Normalement, si j'ai bien fait mon travail, mon CV est visible à ce
                     lien.<br>
-                    <a href="files/cv.pdf">Curriculum Vitae</a>
                 </p>
+                <div class="btn btn-primary tooltip">
+                    <a href="./files/cv.pdf">Curriculum Vitae</a>
+                    <div class="top">
+                        <p>Je tiens à ce que mes informations personnelles restent personnelles, alors il est normal
+                            que ces informations soient manquantes,
+                            alors n'hésitez pas à me contacter par mail ou sur LinkedIn pour avoir ces informations.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="background">
-            <div class="content-wrapper">
-                <p class="content-title">Etiam consequat lectus.2</p>
-                <p class="content-subtitle">Nullam tristique urna sed tellus ornare congue. Etiam vitae erat at nibh
-                    aliquam dapibus.</p>
+            <div class="content-wrapper back-dark">
+                <h1 class="ml7">
+                    <span class="text-wrapper">
+                        <span class="letters">Mes compétences</span>
+                    </span>
+                </h1>
+                <p class="content-subtitle">Ayant déjà des connaissances solides dans le développement, j'ai choisi<br>
+                    l'option SISR (Réseau) lors de mon BTS SIO, pour acquérir de nouvelles compétences.</p>
+                <p class="content-subtitle">Ce type d'apprentissage me donne une grande capacité à m'adapter et à<br>
+                    apprendre rapidement une nouvelle technologie pour les besoins de l'entreprise.</p>
+                <div id="comp">
+                    <div onmouseover="competences(0)" class="comp-img"
+                        style="top: 20px;left: 230px;background: linear-gradient(#fff, #fff 20%, #00000000 20%, #00000000);">
+                        <div class="comp-img__inner"></div>
+                    </div>
+                    <div onmouseover="competences(1)" class="comp-img"
+                        style="top: 260px;left: 10px;background: linear-gradient(#fff, #fff 20%, #00000000 20%, #00000000);">
+                        <div class="comp-img__inner"></div>
+                    </div>
+                    <div onmouseover="competences(2)" class="comp-img"
+                        style="top: 90px;left: 720px;background: linear-gradient(#fff, #fff 20%, #00000000 20%, #00000000);">
+                        <div class="comp-img__inner"></div>
+                    </div>
+                    <div onmouseover="competences(3)" class="comp-img"
+                        style="top: 30px;right: 450px;background: linear-gradient(#00000000, #00000000 15%, #fff 15%, #fff 38.5%, #00000000 38.5%, #00000000);">
+                        <div class="comp-img__inner"></div>
+                    </div>
+                    <div onmouseover="competences(4)" class="comp-img" style="top: 270px;right: 90px;">
+                        <div class="comp-img__inner"></div>
+                    </div>
+                    <div onmouseover="competences(5)" class="comp-img" style="bottom: 120px;right: 160px;">
+                        <div class="comp-img__inner"></div>
+                    </div>
+                    <div onmouseover="competences(6)" class="comp-img" style="bottom: 50px;right: 480px;">
+                        <div class="comp-img__inner"></div>
+                    </div>
+                    <div onmouseover="competences(7)" class="comp-img" style="bottom: 10px;right: 770px;">
+                        <div class="comp-img__inner"></div>
+                    </div>
+                    <div onmouseover="competences(8)" class="comp-img" style="bottom: 40px;left: 560px;">
+                        <div class="comp-img__inner"></div>
+                    </div>
+                    <div onmouseover="competences(9)" class="comp-img" style="bottom:190px;left: 240px;">
+                        <div class="comp-img__inner"></div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="./script.js"></script>
