@@ -150,6 +150,20 @@ a {
     animation: float2 12s ease-in-out infinite;
 }
 
+.menu-phone {
+    display: none;
+    justify-content: space-around;
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+}
+
+.menu-phone-div {
+    height: 50px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, .50);
+}
+
 .menu {
     z-index: 100;
     position: absolute;
@@ -377,60 +391,65 @@ a {
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
-.comp-img {
+@keyframes gradient1 {
+    100% {
+        filter: blur(5px);
+    }
+}
+
+@keyframes gradient2 {
+    0% {
+        filter: blur(5px);
+    }
+
+    100% {
+        filter: blur(0px);
+    }
+}
+
+.top-comp {
     position: absolute;
-    width: 170px;
-    height: 170px;
-    border-radius: 50%;
-    border: 3px solid #fff;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    width: 300px;
+    border-left: solid;
+    text-align: left;
+    padding-left: 40px;
 }
 
-.comp-img__inner {
-    height: 150px;
-    width: 150px;
-    background-size: cover;
-    margin: 10px;
+.top-comp>* {
+    text-decoration: underline 3px transparent;
+    font-size: 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.4s;
 }
 
-#comp :nth-child(1)>.comp-img__inner {
-    background-image: url(img/html.png);
-    background-position-x: 2px;
+.comp-text:hover {
+    text-decoration: underline 3px #fff;
+    letter-spacing: 1px;
 }
 
-#comp :nth-child(2)>.comp-img__inner {
-    background-image: url(img/css.png);
+.comp-text:active {
+    color: black;
 }
 
-#comp :nth-child(3)>.comp-img__inner {
-    background-image: url(img/js.png);
+.bottom-comp {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    width: 300px;
+    border-right: solid;
+    text-align: right;
+    padding-right: 40px;
 }
 
-#comp :nth-child(4)>.comp-img__inner {
-    background-image: url(img/node.png);
-}
-
-#comp :nth-child(5)>.comp-img__inner {
-    background-image: url(img/php.png);
-}
-
-#comp :nth-child(6)>.comp-img__inner {
-    background-image: url(img/python.png);
-}
-
-#comp :nth-child(7)>.comp-img__inner {
-    background-image: url(img/bash.png);
-}
-
-#comp :nth-child(8)>.comp-img__inner {
-    background-image: url(img/powershell.png);
-}
-
-#comp :nth-child(9)>.comp-img__inner {
-    background-image: url(img/network.png);
-    filter: invert(1);
-}
-
-#comp :nth-child(10)>.comp-img__inner {
-    background-image: url(img/rootme.png);
-    filter: invert(1);
+.bottom-comp>* {
+    text-decoration: underline 3px transparent;
+    font-size: 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.4s;
 }

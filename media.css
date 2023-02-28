@@ -1,0 +1,25 @@
+@media (max-width: 450px) {
+    .top-comp {
+        top: 60px;
+    }
+
+    .bottom-comp {
+        bottom: 0;
+    }
+
+    .ml7 {
+        font-size: 2rem;
+    }
+
+    .ml13 {
+        font-size: 1.42rem;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menu-phone {
+        display: flex;
+    }
+}

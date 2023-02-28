@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENZO GALIEGUE</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+
 </head>
 
 <body>
@@ -20,6 +22,13 @@
             <div class="menu-div"></div>
             <h3 class="h3-text" onclick="goTo(3);">Mes compétences</h3>
         </div>
+    </div>
+    <div class="menu-phone">
+        <h3 class="h3-text" onclick="goTo(1);">Profil</h3>
+        <div class="menu-phone-div"></div>
+        <h3 class="h3-text" onclick="goTo(2);">CV</h3>
+        <div class="menu-phone-div"></div>
+        <h3 class="h3-text" onclick="goTo(3);">Compétences</h3>
     </div>
     <div class="container">
         <section class="background">
@@ -78,47 +87,49 @@
             <div class="content-wrapper back-dark">
                 <h1 class="ml7">
                     <span class="text-wrapper">
-                        <span class="letters">Mes compétences</span>
+                        <span class="letters" onclick="competences(11)">Mes compétences</span>
                     </span>
                 </h1>
                 <p class="content-subtitle">Ayant déjà des connaissances solides dans le développement, j'ai choisi<br>
-                    l'option SISR (Réseau) lors de mon BTS SIO, pour acquérir de nouvelles compétences.</p>
-                <p class="content-subtitle">Ce type d'apprentissage me donne une grande capacité à m'adapter et à<br>
-                    apprendre rapidement une nouvelle technologie pour les besoins de l'entreprise.</p>
-                <div id="comp">
-                    <div onmouseover="competences(0)" class="comp-img"
-                        style="top: 20px;left: 230px;background: linear-gradient(#fff, #fff 20%, #00000000 20%, #00000000);">
-                        <div class="comp-img__inner"></div>
+                    l'option SISR (Réseau) lors de mon BTS SIO, pour acquérir de nouvelles compétences.
+                    <br><br>Ce type d'apprentissage me donne une grande capacité à m'adapter et à<br>
+                    apprendre rapidement de nouvelles technologies pour les besoins de l'entreprise.
+                </p>
+                <div class="top-comp">
+                    <div onclick="competences(0)" class="comp-text" id="test">
+                        HTML
                     </div>
-                    <div onmouseover="competences(1)" class="comp-img"
-                        style="top: 260px;left: 10px;background: linear-gradient(#fff, #fff 20%, #00000000 20%, #00000000);">
-                        <div class="comp-img__inner"></div>
+                    <div onclick="competences(1)" class="comp-text">
+                        CSS
                     </div>
-                    <div onmouseover="competences(2)" class="comp-img"
-                        style="top: 90px;left: 720px;background: linear-gradient(#fff, #fff 20%, #00000000 20%, #00000000);">
-                        <div class="comp-img__inner"></div>
+                    <div onclick="competences(2)" class="comp-text">
+                        Javascript
                     </div>
-                    <div onmouseover="competences(3)" class="comp-img"
-                        style="top: 30px;right: 450px;background: linear-gradient(#00000000, #00000000 15%, #fff 15%, #fff 38.5%, #00000000 38.5%, #00000000);">
-                        <div class="comp-img__inner"></div>
+                    <div onclick="competences(3)" class="comp-text">
+                        Node.js
                     </div>
-                    <div onmouseover="competences(4)" class="comp-img" style="top: 270px;right: 90px;">
-                        <div class="comp-img__inner"></div>
+                    <div onclick="competences(4)" class="comp-text">
+                        ReactJS
                     </div>
-                    <div onmouseover="competences(5)" class="comp-img" style="bottom: 120px;right: 160px;">
-                        <div class="comp-img__inner"></div>
+                    <div onclick="competences(5)" class="comp-text">
+                        PHP
                     </div>
-                    <div onmouseover="competences(6)" class="comp-img" style="bottom: 50px;right: 480px;">
-                        <div class="comp-img__inner"></div>
+                </div>
+                <div class="bottom-comp">
+                    <div onclick="competences(6)" class="comp-text">
+                        Python
                     </div>
-                    <div onmouseover="competences(7)" class="comp-img" style="bottom: 10px;right: 770px;">
-                        <div class="comp-img__inner"></div>
+                    <div onclick="competences(7)" class="comp-text">
+                        Bash
                     </div>
-                    <div onmouseover="competences(8)" class="comp-img" style="bottom: 40px;left: 560px;">
-                        <div class="comp-img__inner"></div>
+                    <div onclick="competences(8)" class="comp-text">
+                        Powershell
                     </div>
-                    <div onmouseover="competences(9)" class="comp-img" style="bottom:190px;left: 240px;">
-                        <div class="comp-img__inner"></div>
+                    <div onclick="competences(9)" class="comp-text">
+                        Réseau et Infrastructures
+                    </div>
+                    <div onclick="competences(10)" class="comp-text">
+                        Root-me
                     </div>
                 </div>
             </div>
@@ -130,5 +141,6 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="./script.js"></script>
 </body>
+<script>goTo(3);</script>
 
 </html>
