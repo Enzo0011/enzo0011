@@ -214,6 +214,7 @@ function showMenu() {
 
 document.addEventListener("swiped-down", function (e) {
 	goTo(current + 1);
+	alert("swiped down");
 });
 
 document.addEventListener("swiped-up", function (e) {
