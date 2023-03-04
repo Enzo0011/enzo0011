@@ -72,7 +72,7 @@ document.querySelector(".ml14 .letters").innerHTML = document
 	.querySelector(".ml14 .letters")
 	.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-document.querySelector(".ml7 .letters").innerHTML = textdocument
+document.querySelector(".ml7 .letters").innerHTML = document
 	.querySelector(".ml7 .letters")
 	.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
