@@ -60,6 +60,12 @@ anime
 		duration: ml4.durationIn,
 	});
 
+var textWrapper = document.querySelector(".ml11 .letters");
+textWrapper.innerHTML = textWrapper.textContent.replace(
+	/([^\x00-\x80]|\w)/g,
+	"<span class='letter'>$&</span>"
+);
+
 var textWrapper = document.querySelector(".ml13");
 textWrapper.innerHTML = textWrapper.textContent.replace(
 	/\S/g,
@@ -79,6 +85,26 @@ textWrapper.innerHTML = textWrapper.textContent.replace(
 );
 
 function startAnimation() {
+	anime
+		.timeline({ loop: false })
+		.add({
+			targets: ".ml11 .line",
+			scaleY: [0, 1],
+			opacity: [0.5, 1],
+			easing: "easeOutExpo",
+			duration: 700,
+		})
+		.add({
+			targets: ".ml11 .line",
+			translateX: [
+				0,
+				document.querySelector(".ml11 .letters").getBoundingClientRect()
+					.width + 10,
+			],
+			easing: "easeOutExpo",
+			duration: 700,
+			delay: 100,
+		});
 	anime.timeline({ loop: false }).add({
 		targets: ".ml13 .letter",
 		translateY: [100, 0],
