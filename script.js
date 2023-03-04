@@ -60,6 +60,12 @@ anime
 		duration: ml4.durationIn,
 	});
 
+var textWrapper = document.querySelector(".ml1 .letters");
+textWrapper.innerHTML = textWrapper.textContent.replace(
+	/\S/g,
+	"<span class='letter'>$&</span>"
+);
+
 var textWrapper = document.querySelector(".ml13");
 textWrapper.innerHTML = textWrapper.textContent.replace(
 	/\S/g,
@@ -79,6 +85,54 @@ textWrapper.innerHTML = textWrapper.textContent.replace(
 );
 
 function startAnimation() {
+	anime
+		.timeline({ loop: false })
+		.add({
+			targets: ".ml1 .letter",
+			scale: [0.3, 1],
+			opacity: [0, 1],
+			translateZ: 0,
+			easing: "easeOutExpo",
+			duration: 600,
+			delay: (el, i) => 70 * (i + 1),
+		})
+		.add({
+			targets: ".ml1 .line",
+			scaleX: [0, 1],
+			opacity: [0.5, 1],
+			easing: "easeOutExpo",
+			duration: 700,
+			offset: "-=875",
+			delay: (el, i, l) => 80 * (l - i),
+		});
+	anime
+		.timeline({ loop: false })
+		.add({
+			targets: ".ml11 .line",
+			scaleY: [0, 1],
+			opacity: [0.5, 1],
+			easing: "easeOutExpo",
+			duration: 700,
+		})
+		.add({
+			targets: ".ml11 .line",
+			translateX: [
+				0,
+				document.querySelector(".ml11 .letters").getBoundingClientRect()
+					.width + 10,
+			],
+			easing: "easeOutExpo",
+			duration: 700,
+			delay: 100,
+		})
+		.add({
+			targets: ".ml11 .letter",
+			opacity: [0, 1],
+			easing: "easeOutExpo",
+			duration: 600,
+			offset: "-=775",
+			delay: (el, i) => 34 * (i + 1),
+		});
 	anime.timeline({ loop: false }).add({
 		targets: ".ml13 .letter",
 		translateY: [100, 0],
