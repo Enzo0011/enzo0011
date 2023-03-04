@@ -1,26 +1,32 @@
 @media (max-width: 450px) {
-    .top-comp {
-        top: 60px;
-    }
+	.top-comp {
+		top: 60px;
+	}
 
-    .bottom-comp {
-        bottom: 9%;
-    }
+	.bottom-comp {
+		bottom: 9%;
+	}
 
-    .ml7 {
-        font-size: 2rem;
-        margin-bottom: 0;
-    }
+	.ml7 {
+		font-size: 2rem;
+		margin-bottom: 0;
+	}
 
-    .ml13 {
-        font-size: 1.42rem;
-    }
+	.ml13 {
+		font-size: 1.42rem;
+	}
 
-    .menu {
-        display: none;
-    }
+	.menu {
+		display: none;
+	}
 
-    .menu-phone {
-        display: flex;
-    }
+	.menu-phone {
+		display: flex;
+	}
+	.top-comp > * {
+		margin: 8px 0;
+	}
+	.bottom-comp > * {
+		margin: 8px 0;
+	}
 }
