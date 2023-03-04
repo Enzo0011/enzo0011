@@ -170,6 +170,14 @@
 			document.addEventListener("swiped-left", function (e) {
 				alert(1);
 			});
+			document.addEventListener("swiped-down", function (e) {
+				goTo(current + 1);
+				alert("swiped down");
+			});
+
+			document.addEventListener("swiped-up", function (e) {
+				goTo(current - 1);
+			});
 		</script>
 	</body>
 	<!-- <script>goTo(3);</script> -->

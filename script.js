@@ -212,15 +212,6 @@ function showMenu() {
 	}
 }
 
-document.addEventListener("swiped-down", function (e) {
-	goTo(current + 1);
-	alert("swiped down");
-});
-
-document.addEventListener("swiped-up", function (e) {
-	goTo(current - 1);
-});
-
 const comp = [
 	"<u>HTML</u> est la base de n'importe quel site internet, c'est donc par cela que j'ai commencé.",
 	"Le HTML n'est pas très élégant seul, alors j'y met du style avec <u>CSS</u>, un peu répétitif, donc j'ai appris le Sass.",
