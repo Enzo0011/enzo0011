@@ -60,26 +60,21 @@ anime
 		duration: ml4.durationIn,
 	});
 
-var textWrapper = document.querySelector(".ml1 .letters");
-textWrapper.innerHTML = textWrapper.textContent.replace(
+document.querySelector(".ml1 .letters").innerHTML = document
+	.querySelector(".ml1 .letters")
+	.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+document.querySelector(".ml13").innerHTML = document.querySelector(".ml13").textContent.replace(
 	/\S/g,
 	"<span class='letter'>$&</span>"
 );
 
-var textWrapper = document.querySelector(".ml13");
-textWrapper.innerHTML = textWrapper.textContent.replace(
+document.querySelector(".ml14 .letters").innerHTML = document.querySelector(".ml14 .letters").textContent.replace(
 	/\S/g,
 	"<span class='letter'>$&</span>"
 );
 
-var textWrapper = document.querySelector(".ml14 .letters");
-textWrapper.innerHTML = textWrapper.textContent.replace(
-	/\S/g,
-	"<span class='letter'>$&</span>"
-);
-
-var textWrapper = document.querySelector(".ml7 .letters");
-textWrapper.innerHTML = textWrapper.textContent.replace(
+document.querySelector(".ml7 .letters").innerHTML = textdocument.querySelector(".ml7 .letters")Wrapper.textContent.replace(
 	/\S/g,
 	"<span class='letter'>$&</span>"
 );
