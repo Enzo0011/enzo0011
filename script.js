@@ -7,107 +7,124 @@ ml4.smallDurationIn = 50;
 ml4.durationOut = 600;
 ml4.delay = 300;
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-anime.timeline({ loop: false })
+anime
+	.timeline({ loop: false })
 	.add({
-		targets: '.ml4 .letters-1',
+		targets: ".ml4 .letters-1",
 		opacity: ml4.opacityIn,
 		scale: ml4.scaleIn,
-		duration: ml4.durationIn
-	}).add({
-		targets: '.ml4 .letters-1',
+		duration: ml4.durationIn,
+	})
+	.add({
+		targets: ".ml4 .letters-1",
 		opacity: 0,
 		scale: ml4.scaleOut,
 		duration: ml4.durationOut,
 		easing: "easeInExpo",
-		delay: ml4.delay
-	}).add({
-		targets: '.ml4 .letters-2',
+		delay: ml4.delay,
+	})
+	.add({
+		targets: ".ml4 .letters-2",
 		opacity: ml4.opacityIn,
 		scale: ml4.scaleIn,
-		duration: ml4.smallDurationIn
-	}).add({
-		targets: '.ml4 .letters-2',
+		duration: ml4.smallDurationIn,
+	})
+	.add({
+		targets: ".ml4 .letters-2",
 		opacity: 0,
 		scale: ml4.scaleOut,
 		duration: ml4.durationOut,
 		easing: "easeInExpo",
-		delay: ml4.delay
-	}).add({
-		targets: '.ml4 .letters-3',
+		delay: ml4.delay,
+	})
+	.add({
+		targets: ".ml4 .letters-3",
 		opacity: ml4.opacityIn,
 		scale: ml4.scaleIn,
-		duration: ml4.smallDurationIn
-	}).add({
-		targets: '.ml4 .letters-3',
+		duration: ml4.smallDurationIn,
+	})
+	.add({
+		targets: ".ml4 .letters-3",
 		opacity: 0,
 		scale: ml4.scaleOut,
 		duration: ml4.durationOut,
 		easing: "easeInExpo",
-		delay: ml4.delay
-	}).add({
-		targets: '.ml4 .letters-4',
+		delay: ml4.delay,
+	})
+	.add({
+		targets: ".ml4 .letters-4",
 		opacity: ml4.opacityIn,
 		scale: ml4.scaleIn,
-		duration: ml4.durationIn
+		duration: ml4.durationIn,
 	});
 
-var textWrapper = document.querySelector('.ml13');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+var textWrapper = document.querySelector(".ml13");
+textWrapper.innerHTML = textWrapper.textContent.replace(
+	/\S/g,
+	"<span class='letter'>$&</span>"
+);
 
-var textWrapper = document.querySelector('.ml14 .letters');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+var textWrapper = document.querySelector(".ml14 .letters");
+textWrapper.innerHTML = textWrapper.textContent.replace(
+	/\S/g,
+	"<span class='letter'>$&</span>"
+);
 
-var textWrapper = document.querySelector('.ml7 .letters');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+var textWrapper = document.querySelector(".ml7 .letters");
+textWrapper.innerHTML = textWrapper.textContent.replace(
+	/\S/g,
+	"<span class='letter'>$&</span>"
+);
 
 function startAnimation() {
-	anime.timeline({ loop: false })
+	anime.timeline({ loop: false }).add({
+		targets: ".ml13 .letter",
+		translateY: [100, 0],
+		translateZ: 0,
+		opacity: [0, 1],
+		easing: "easeOutExpo",
+		duration: 1400,
+		delay: (el, i) => 300 + 30 * i,
+	});
+	anime
+		.timeline({ loop: false })
 		.add({
-			targets: '.ml13 .letter',
-			translateY: [100, 0],
-			translateZ: 0,
-			opacity: [0, 1],
-			easing: "easeOutExpo",
-			duration: 1400,
-			delay: (el, i) => 300 + 30 * i
-		});
-	anime.timeline({ loop: false })
-		.add({
-			targets: '.ml14 .line',
+			targets: ".ml14 .line",
 			scaleX: [0, 1],
 			opacity: [0.5, 1],
 			easing: "easeInOutExpo",
-			duration: 900
-		}).add({
-			targets: '.ml14 .letter',
+			duration: 900,
+		})
+		.add({
+			targets: ".ml14 .letter",
 			opacity: [0, 1],
 			translateX: [40, 0],
 			translateZ: 0,
 			scaleX: [0.3, 1],
 			easing: "easeOutExpo",
 			duration: 800,
-			offset: '-=600',
-			delay: (el, i) => 150 + 25 * i
+			offset: "-=600",
+			delay: (el, i) => 150 + 25 * i,
 		});
-	anime.timeline({ loop: false })
-		.add({
-			targets: '.ml7 .letter',
-			translateY: ["1.1em", 0],
-			translateX: ["0.55em", 0],
-			translateZ: 0,
-			rotateZ: [180, 0],
-			duration: 750,
-			easing: "easeOutExpo",
-			delay: (el, i) => 50 * i
-		});
+	anime.timeline({ loop: false }).add({
+		targets: ".ml7 .letter",
+		translateY: ["1.1em", 0],
+		translateX: ["0.55em", 0],
+		translateZ: 0,
+		rotateZ: [180, 0],
+		duration: 750,
+		easing: "easeOutExpo",
+		delay: (el, i) => 50 * i,
+	});
 }
 
-
 var ticking = false,
-	isFirefox = (/Firefox/i.test(navigator.userAgent)),
-	isIe = (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(navigator.userAgent)),
+	isFirefox = /Firefox/i.test(navigator.userAgent),
+	isIe =
+		/MSIE/i.test(navigator.userAgent) ||
+		/Trident.*rv\:11\./i.test(navigator.userAgent),
 	scrollSens = 30,
 	slideTime = 500,
 	current = 0,
@@ -115,7 +132,7 @@ var ticking = false,
 
 function parallaxScroll(evt) {
 	if (isFirefox) {
-		delta = evt.detail * (-120);
+		delta = evt.detail * -120;
 	} else if (isIe) {
 		delta = -evt.deltaY;
 	} else {
@@ -163,7 +180,6 @@ function previousItem() {
 	setTimeout(startAnimation, 1000);
 }
 
-
 function goTo(dest) {
 	if (dest >= total) return;
 	if (current < dest) {
@@ -185,16 +201,24 @@ function showMenu() {
 	var menu = document.getElementsByClassName("menu")[0];
 	if (!visible) {
 		visible = !visible;
-		menu.style.animationPlayState = 'paused';
+		menu.style.animationPlayState = "paused";
 		menu.childNodes[1].style.backgroundImage = "url(img/circled2.png)";
 		menu.childNodes[3].style.display = "unset";
 	} else {
 		visible = !visible;
-		menu.style.animationPlayState = 'running';
+		menu.style.animationPlayState = "running";
 		menu.childNodes[1].style.backgroundImage = "url(img/circled1.png)";
 		menu.childNodes[3].style.display = "none";
 	}
 }
+
+document.addEventListener("swiped-down", function (e) {
+	goTo(current + 1);
+});
+
+document.addEventListener("swiped-up", function (e) {
+	goTo(current - 1);
+});
 
 const comp = [
 	"<u>HTML</u> est la base de n'importe quel site internet, c'est donc par cela que j'ai commencé.",
@@ -208,24 +232,28 @@ const comp = [
 	"Mon ordinateur étant sous Windows, il est important que je connaisse les bases de <u>PowerShell</u>.",
 	"Switch, Router, Serveur Web, DNS, Proxy, Serveur Windows, Continuité de service, Haute disponibilités.<br>Toutes ces compétences ont été acquise lors de mon <u>BTS SIO</u>",
 	"J'ai un compte root-me, où je m'entraine et j'apprend énormément de choses en rapport avec la sécurité informatique.<br>Dans le monde d'aujourd'hui, rien de plus important !<br><a href='http://root-me.org/TcHp'>Disponible ici.</a>",
-	"Ayant déjà des connaissances solides dans le développement, j'ai choisi <br>l'option SISR (Réseau) lors de mon BTS SIO, pour acquérir de nouvelles compétences."
-]
+	"Ayant déjà des connaissances solides dans le développement, j'ai choisi <br>l'option SISR (Réseau) lors de mon BTS SIO, pour acquérir de nouvelles compétences.",
+];
 
 async function competences(n) {
-	document.getElementsByClassName('content-subtitle')[6].style.animation = "gradient1 0.5s ease";
+	document.getElementsByClassName("content-subtitle")[6].style.animation =
+		"gradient1 0.5s ease";
 	await sleep(500);
-	document.getElementsByClassName('content-subtitle')[6].style.animation = "gradient2 0.5s ease";
-	document.getElementsByClassName('content-subtitle')[6].innerHTML = comp[n];
+	document.getElementsByClassName("content-subtitle")[6].style.animation =
+		"gradient2 0.5s ease";
+	document.getElementsByClassName("content-subtitle")[6].innerHTML = comp[n];
 	await sleep(500);
-	document.getElementsByClassName('content-subtitle')[6].style.animation = "";
+	document.getElementsByClassName("content-subtitle")[6].style.animation = "";
 	await sleep(500);
 	animationCompetences();
 }
 
 async function animationCompetences() {
-	for (i = 0; i < document.getElementsByClassName('comp-text').length; i++) {
-		document.getElementsByClassName('comp-text')[i].style.textDecoration = 'underline 3px #fff';
+	for (i = 0; i < document.getElementsByClassName("comp-text").length; i++) {
+		document.getElementsByClassName("comp-text")[i].style.textDecoration =
+			"underline 3px #fff";
 		await sleep(250);
-		document.getElementsByClassName('comp-text')[i].style.textDecoration = '';
+		document.getElementsByClassName("comp-text")[i].style.textDecoration =
+			"";
 	}
 }
