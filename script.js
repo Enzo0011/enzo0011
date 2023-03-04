@@ -60,11 +60,11 @@ anime
 		duration: ml4.durationIn,
 	});
 
-var textWrapper = document.querySelector(".ml11 .letters");
-textWrapper.innerHTML = textWrapper.textContent.replace(
-	/([^\x00-\x80]|\w)/g,
-	"<span class='letter'>$&</span>"
-);
+// var textWrapper = document.querySelector(".ml11 .letters");
+// textWrapper.innerHTML = textWrapper.textContent.replace(
+// 	/([^\x00-\x80]|\w)/g,
+// 	"<span class='letter'>$&</span>"
+// );
 
 var textWrapper = document.querySelector(".ml13");
 textWrapper.innerHTML = textWrapper.textContent.replace(
