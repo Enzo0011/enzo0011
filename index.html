@@ -1,146 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ENZO GALIEGUE</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="media.css" />
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENZO GALIEGUE</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="media.css">
+	<body>
+		<div class="menu" onmouseleave="visible && showMenu();">
+			<div id="menu-icon" onclick="showMenu();"></div>
+			<div style="text-align: center; display: none">
+				<h3 class="h3-text" onclick="goTo(1);">Mon profil</h3>
+				<div class="menu-div"></div>
+				<h3 class="h3-text" onclick="goTo(2);">Mon CV</h3>
+				<div class="menu-div"></div>
+				<h3 class="h3-text" onclick="goTo(3);">Mes compétences</h3>
+			</div>
+		</div>
+		<div class="menu-phone">
+			<h3 class="h3-text" onclick="goTo(1);">Profil</h3>
+			<div class="menu-phone-div"></div>
+			<h3 class="h3-text" onclick="goTo(2);">CV</h3>
+			<div class="menu-phone-div"></div>
+			<h3 class="h3-text" onclick="goTo(3);">Compétences</h3>
+		</div>
+		<div class="container">
+			<section class="background">
+				<div class="content-wrapper back-dark">
+					<h1 class="ml4">
+						<span class="letters letters-1">Bienvenue</span>
+						<span class="letters letters-2">Sur</span>
+						<span class="letters letters-3">Mon</span>
+						<span class="letters letters-4">Portfolio</span>
+					</h1>
+					<br />
+					<p class="content-subtitle">
+						Je m'appelle Enzo, j'ai 19 ans, <br />et l'informatique
+						me passionne depuis toujours.
+					</p>
+					<br /><br /><br />
+					<p class="content-subtitle">
+						Plus bas, qui je suis, mon CV, mes compétences<br />et
+						mes projets
+					</p>
+					<div class="shape1"></div>
+					<div class="shape2"></div>
+				</div>
+			</section>
+			<section class="background">
+				<div class="content-wrapper">
+					<h1 class="ml13">Développeur Web Full Stack</h1>
+					<p class="content-subtitle">
+						Tout à commencer avec mon premier ordinateur à 11 ans,
+						j'ai découvert que je pouvais créer du contenu
+						simplement avec du code.
+					</p>
+					<p class="content-subtitle">
+						Ayant appris en autodidacte jusqu'à maintenant, j'ai
+						quand même obtenu un bac sti2d à Paul Duez, suivi d'un
+						BTS SIO à Saint-Luc
+					</p>
+					<p class="content-subtitle">
+						Je recherche maintenant une alternance dans ce domaine
+						pour m'accompagner<br />
+						lors de mon dernier cursus scolaire au sein de l'ESGI
+					</p>
+				</div>
+			</section>
+			<section class="background">
+				<div class="content-wrapper back-dark">
+					<h1 class="ml14">
+						<span class="text-wrapper">
+							<span class="letters">Mon CV</span>
+							<span class="line"></span>
+						</span>
+					</h1>
+					<p class="content-subtitle">
+						Normalement, si j'ai bien fait mon travail, mon CV est
+						visible à ce lien.<br />
+					</p>
+					<div class="btn btn-primary tooltip">
+						<a href="./files/cv.pdf">Curriculum Vitae</a>
+						<div class="top">
+							<p>
+								Je tiens à ce que mes informations personnelles
+								restent personnelles, alors il est normal que
+								ces informations soient manquantes, alors
+								n'hésitez pas à me contacter par mail ou sur
+								LinkedIn pour avoir ces informations.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="background">
+				<div class="content-wrapper back-dark">
+					<h1 class="ml7">
+						<span class="text-wrapper">
+							<span class="letters" onclick="competences(11)"
+								>Mes compétences</span
+							>
+						</span>
+					</h1>
+					<p class="content-subtitle">
+						Ayant déjà des connaissances solides dans le
+						développement, j'ai choisi<br />
+						l'option SISR (Réseau) lors de mon BTS SIO, pour
+						acquérir de nouvelles compétences.
+						<br /><br />Ce type d'apprentissage me donne une grande
+						capacité à m'adapter et à<br />
+						apprendre rapidement de nouvelles technologies pour les
+						besoins de l'entreprise.
+					</p>
+					<div class="top-comp">
+						<div
+							onclick="competences(0)"
+							class="comp-text"
+							id="test"
+						>
+							HTML
+						</div>
+						<div onclick="competences(1)" class="comp-text">
+							CSS
+						</div>
+						<div onclick="competences(2)" class="comp-text">
+							Javascript
+						</div>
+						<div onclick="competences(3)" class="comp-text">
+							Node.js
+						</div>
+						<div onclick="competences(4)" class="comp-text">
+							ReactJS
+						</div>
+						<div onclick="competences(5)" class="comp-text">
+							PHP
+						</div>
+					</div>
+					<div class="bottom-comp">
+						<div onclick="competences(6)" class="comp-text">
+							Python
+						</div>
+						<div onclick="competences(7)" class="comp-text">
+							Bash
+						</div>
+						<div onclick="competences(8)" class="comp-text">
+							Powershell
+						</div>
+						<div onclick="competences(9)" class="comp-text">
+							Réseau et Infrastructures
+						</div>
+						<div onclick="competences(10)" class="comp-text">
+							Root-me
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
 
-</head>
-
-<body>
-    <div class="menu" onmouseleave="visible && showMenu();">
-        <div id="menu-icon" onclick="showMenu();">
-        </div>
-        <div style="text-align: center;display:none;">
-            <h3 class="h3-text" onclick="goTo(1);">Mon profil</h3>
-            <div class="menu-div"></div>
-            <h3 class="h3-text" onclick="goTo(2);">Mon CV</h3>
-            <div class="menu-div"></div>
-            <h3 class="h3-text" onclick="goTo(3);">Mes compétences</h3>
-        </div>
-    </div>
-    <div class="menu-phone">
-        <h3 class="h3-text" onclick="goTo(1);">Profil</h3>
-        <div class="menu-phone-div"></div>
-        <h3 class="h3-text" onclick="goTo(2);">CV</h3>
-        <div class="menu-phone-div"></div>
-        <h3 class="h3-text" onclick="goTo(3);">Compétences</h3>
-    </div>
-    <div class="container">
-        <section class="background">
-            <div class="content-wrapper back-dark">
-                <h1 class="ml4">
-                    <span class="letters letters-1">Bienvenue</span>
-                    <span class="letters letters-2">Sur</span>
-                    <span class="letters letters-3">Mon</span>
-                    <span class="letters letters-4">Portfolio</span>
-                </h1>
-                <br>
-                <p class="content-subtitle">Je m'appelle Enzo, j'ai 19 ans, <br>et l'informatique me passionne depuis
-                    toujours.</p>
-                <br><br><br>
-                <p class="content-subtitle">Plus bas, qui je suis, mon CV, mes compétences<br>et mes projets</p>
-                <div class="shape1"></div>
-                <div class="shape2"></div>
-            </div>
-        </section>
-        <section class="background">
-            <div class="content-wrapper">
-                <h1 class="ml13">Développeur Web Full Stack</h1>
-                <p class="content-subtitle">Tout à commencer avec mon premier ordinateur à 11 ans, j'ai découvert que je
-                    pouvais créer du contenu simplement avec du code.</p>
-                <p class="content-subtitle">Ayant appris en autodidacte jusqu'à maintenant, j'ai quand même obtenu un
-                    bac
-                    sti2d à Paul Duez, suivi d'un BTS SIO à Saint-Luc</p>
-                <p class="content-subtitle">Je recherche maintenant une alternance dans ce domaine pour
-                    m'accompagner<br>
-                    lors de mon dernier cursus scolaire au sein de l'ESGI</p>
-            </div>
-        </section>
-        <section class="background">
-            <div class="content-wrapper back-dark">
-                <h1 class="ml14">
-                    <span class="text-wrapper">
-                        <span class="letters">Mon CV</span>
-                        <span class="line"></span>
-                    </span>
-                </h1>
-                <p class="content-subtitle">Normalement, si j'ai bien fait mon travail, mon CV est visible à ce
-                    lien.<br>
-                </p>
-                <div class="btn btn-primary tooltip">
-                    <a href="./files/cv.pdf">Curriculum Vitae</a>
-                    <div class="top">
-                        <p>Je tiens à ce que mes informations personnelles restent personnelles, alors il est normal
-                            que ces informations soient manquantes,
-                            alors n'hésitez pas à me contacter par mail ou sur LinkedIn pour avoir ces informations.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="background">
-            <div class="content-wrapper back-dark">
-                <h1 class="ml7">
-                    <span class="text-wrapper">
-                        <span class="letters" onclick="competences(11)">Mes compétences</span>
-                    </span>
-                </h1>
-                <p class="content-subtitle">Ayant déjà des connaissances solides dans le développement, j'ai choisi<br>
-                    l'option SISR (Réseau) lors de mon BTS SIO, pour acquérir de nouvelles compétences.
-                    <br><br>Ce type d'apprentissage me donne une grande capacité à m'adapter et à<br>
-                    apprendre rapidement de nouvelles technologies pour les besoins de l'entreprise.
-                </p>
-                <div class="top-comp">
-                    <div onclick="competences(0)" class="comp-text" id="test">
-                        HTML
-                    </div>
-                    <div onclick="competences(1)" class="comp-text">
-                        CSS
-                    </div>
-                    <div onclick="competences(2)" class="comp-text">
-                        Javascript
-                    </div>
-                    <div onclick="competences(3)" class="comp-text">
-                        Node.js
-                    </div>
-                    <div onclick="competences(4)" class="comp-text">
-                        ReactJS
-                    </div>
-                    <div onclick="competences(5)" class="comp-text">
-                        PHP
-                    </div>
-                </div>
-                <div class="bottom-comp">
-                    <div onclick="competences(6)" class="comp-text">
-                        Python
-                    </div>
-                    <div onclick="competences(7)" class="comp-text">
-                        Bash
-                    </div>
-                    <div onclick="competences(8)" class="comp-text">
-                        Powershell
-                    </div>
-                    <div onclick="competences(9)" class="comp-text">
-                        Réseau et Infrastructures
-                    </div>
-                    <div onclick="competences(10)" class="comp-text">
-                        Root-me
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="./script.js"></script>
-</body>
-<script>goTo(3);</script>
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="./script.js"></script>
+	</body>
+	<!-- <script>goTo(3);</script> -->
 </html>

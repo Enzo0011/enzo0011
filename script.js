@@ -207,7 +207,7 @@ const comp = [
 	"Ayant souvent travaillé avec des serveurs ou machines virtuelles, j'ai acquis une bonne maitrise générale de <u>linux</u>, et de <u>Bash</u>.",
 	"Mon ordinateur étant sous Windows, il est important que je connaisse les bases de <u>PowerShell</u>.",
 	"Switch, Router, Serveur Web, DNS, Proxy, Serveur Windows, Continuité de service, Haute disponibilités.<br>Toutes ces compétences ont été acquise lors de mon <u>BTS SIO</u>",
-	"Et j'ai un compte root-me, où je m'entraine et j'apprend énormément de choses en rapport avec la sécurité informatique.<br>Dans le monde d'aujourd'hui, rien de plus important !<br><a href='http://root-me.org/TcHp'>Disponible ici.</a>",
+	"J'ai un compte root-me, où je m'entraine et j'apprend énormément de choses en rapport avec la sécurité informatique.<br>Dans le monde d'aujourd'hui, rien de plus important !<br><a href='http://root-me.org/TcHp'>Disponible ici.</a>",
 	"Ayant déjà des connaissances solides dans le développement, j'ai choisi <br>l'option SISR (Réseau) lors de mon BTS SIO, pour acquérir de nouvelles compétences."
 ]
 
