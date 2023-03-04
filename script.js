@@ -60,12 +60,6 @@ anime
 		duration: ml4.durationIn,
 	});
 
-// var textWrapper = document.querySelector(".ml11 .letters");
-// textWrapper.innerHTML = textWrapper.textContent.replace(
-// 	/([^\x00-\x80]|\w)/g,
-// 	"<span class='letter'>$&</span>"
-// );
-
 var textWrapper = document.querySelector(".ml13");
 textWrapper.innerHTML = textWrapper.textContent.replace(
 	/\S/g,
@@ -85,26 +79,6 @@ textWrapper.innerHTML = textWrapper.textContent.replace(
 );
 
 function startAnimation() {
-	anime
-		.timeline({ loop: false })
-		.add({
-			targets: ".ml11 .line",
-			scaleY: [0, 1],
-			opacity: [0.5, 1],
-			easing: "easeOutExpo",
-			duration: 700,
-		})
-		.add({
-			targets: ".ml11 .line",
-			translateX: [
-				0,
-				document.querySelector(".ml11 .letters").getBoundingClientRect()
-					.width + 10,
-			],
-			easing: "easeOutExpo",
-			duration: 700,
-			delay: 100,
-		});
 	anime.timeline({ loop: false }).add({
 		targets: ".ml13 .letter",
 		translateY: [100, 0],
@@ -249,7 +223,7 @@ const comp = [
 	"Ayant souvent travaillé avec des serveurs ou machines virtuelles, j'ai acquis une bonne maitrise générale de <u>linux</u>, et de <u>Bash</u>.",
 	"Mon ordinateur étant sous Windows, il est important que je connaisse les bases de <u>PowerShell</u>.",
 	"Switch, Router, Serveur Web, DNS, Proxy, Serveur Windows, Continuité de service, Haute disponibilités.<br>Toutes ces compétences ont été acquise lors de mon <u>BTS SIO</u>",
-	"J'ai un compte root-me, où je m'entraine et j'apprend énormément de choses en rapport avec la sécurité informatique.<br>Dans le monde d'aujourd'hui, rien de plus important !<br><a href='http://root-me.org/TcHp'>Disponible ici.</a>",
+	"Et j'ai un compte root-me, où je m'entraine et j'apprend énormément de choses en rapport avec la sécurité informatique.<br>Dans le monde d'aujourd'hui, rien de plus important !<br><a href='http://root-me.org/TcHp'>Disponible ici.</a>",
 	"Ayant déjà des connaissances solides dans le développement, j'ai choisi <br>l'option SISR (Réseau) lors de mon BTS SIO, pour acquérir de nouvelles compétences.",
 ];
 
