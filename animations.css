@@ -33,6 +33,11 @@
 	bottom: 0;
 }
 
+.ml3 {
+	font-weight: 900;
+	font-size: 3.5em;
+}
+
 .ml4 {
 	position: relative;
 	font-weight: 900;
