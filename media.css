@@ -32,4 +32,7 @@
 	.ml3 + .content-subtitle {
 		margin-top: -40px;
 	}
+	.ml3 ~ .content-subtitle:nth-child(-n + 5) {
+		font-size: 1.6vh;
+	}
 }
