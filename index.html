@@ -22,6 +22,10 @@
 				<h3 class="h3-text" onclick="goTo(3);">Mes compétences</h3>
 				<div class="menu-div"></div>
 				<h3 class="h3-text" onclick="goTo(4);">Mes projets</h3>
+				<div class="menu-div"></div>
+				<h3 class="h3-text" onclick="goTo(5);">Le BTS SIO</h3>
+				<div class="menu-div"></div>
+				<h3 class="h3-text" onclick="goTo(6);">Veille</h3>
 			</div>
 		</div>
 		<div class="menu-phone">
@@ -47,8 +51,8 @@
 					</p>
 					<br /><br /><br />
 					<p class="content-subtitle">
-						Plus bas, qui je suis, mon CV, mes compétences<br />et
-						mes projets
+						Plus bas, qui je suis, mon CV, mes compétences<br />
+						mes projets, et mon BTS.
 					</p>
 					<div class="shape1"></div>
 					<div class="shape2"></div>
@@ -59,12 +63,13 @@
 					<h1 class="ml13">Développeur Web Full Stack</h1>
 					<p class="content-subtitle">
 						Ayant appris en autodidacte l'informatique, j'ai obtenu
-						un bac sti2d à Paul Duez, suivi d'un BTS SIO à Saint-Luc
+						un bac sti2d à Paul Duez, suivi d'un BTS SIO à
+						Saint-Luc.
 					</p>
 					<p class="content-subtitle">
 						Je recherche maintenant une alternance dans ce domaine
 						pour m'accompagner<br />
-						lors de mon dernier cursus scolaire au sein de l'ESGI
+						lors de mon dernier cursus scolaire au sein de l'ESGI.
 					</p>
 					<p class="content-subtitle">
 						J'ai commencé le développement Web en 2016, grâce à un
@@ -219,36 +224,30 @@
 						<span class="word">technologique</span>
 					</h1>
 					<p class="content-subtitle">
-						Le BTS SIO se compose de 2 options, <u>SLAM</u> et
-						<u>SISR</u>, la première vise à la <u>conception</u>, au
-						<u>développement</u> et au <u>déploiement</u> d'une
-						solution applicative. <br />La seconde, vise plutôt à la
-						mise en place de <u>solutions d'infrastructure</u> et à
-						<u>l'administration</u> de celle-ci.
+						Pour mon BTS, je dois effectuer une veille afin d'être
+						au courant des actualités, j'ai choisi 2 sujets
+						distincts sur lesquels je serai interrogé. <br />La
+						détection de BOT et la Blockchain.
 					</p>
 					<p class="content-subtitle">
-						Ayant choisi l'option <u>SISR</u>, nous apprenons aussi
-						bien l'environnement <u>Linux</u> (Léger, simple et
-						pratiques) que <u>Windows</u> (populaire et visuel).<br />
-						Également les équipements <u>Cisco</u> étant très
-						répandus.
+						Les bots sont omniprésents, jusqu'à 70% du trafic web,
+						ils sont souvent utiles, comme pour l'indexation ou les
+						chatbots. <br />Mais comme tout, il y a le mauvais côté,
+						collectes de données, spams, DDoS et bien d'autres.
 					</p>
+					<a href="">Articles</a>
+					<a href="">Articles</a>
+					<a href="">Articles</a>
 					<p class="content-subtitle">
-						Nous retrouvons les <u>matières</u> suivantes:<br />
-						Culture Générale et Expression, Anglais, Mathématique et
-						Algorithmie appliqué<br /><br />
-						Ainsi que les <u>matières techniques</u> telles que:<br />
-						Culture Economique Juridique et Managériale, Mise à
-						disposition de services informatiques, Cybersécurité des
-						services informatiques, Atelier Professionnel
+						La blockchain permet de stocker et de transférer des
+						informations sans autorité centrale. Chaque information
+						est réunie en "Block", vérifiés et groupés, ces bloques
+						forment une "chaine de bloques" sécurisée par la
+						cryptographie.
 					</p>
-					<p class="content-subtitle">
-						<u>Deux</u> périodes de stages d'une durée de
-						<u>5 semaines</u> chacunes sont obligatoires<br />
-						d'acquérir de l'<u>expérience</u> au long des 2 années
-						de BTS.
-					</p>
-					<a href="">Tableau de compétences</a>
+					<a href="">Articles</a>
+					<a href="">Articles</a>
+					<a href="">Articles</a>
 				</div>
 			</section>
 		</div>
@@ -259,14 +258,10 @@
 		<script src="./swipe.js"></script>
 		<script src="./script.js"></script>
 		<script>
-			document.addEventListener("swiped-down", function (e) {
-				goTo(current - 1);
-			});
+			document.addEventListener("swiped-down", (e) => goTo(current - 1));
 
-			document.addEventListener("swiped-up", function (e) {
-				goTo(current + 1);
-			});
-			window.addEventListener("load", () => alert("loaded"));
+			document.addEventListener("swiped-up", (e) => goTo(current + 1));
+			document.addEventListener("swipe-left", (e) => goTo(6));
 		</script>
 	</body>
 </html>

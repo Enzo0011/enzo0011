@@ -9,56 +9,58 @@ ml4.delay = 300;
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-anime
-	.timeline({ loop: false })
-	.add({
-		targets: ".ml4 .letters-1",
-		opacity: ml4.opacityIn,
-		scale: ml4.scaleIn,
-		duration: ml4.durationIn,
-	})
-	.add({
-		targets: ".ml4 .letters-1",
-		opacity: 0,
-		scale: ml4.scaleOut,
-		duration: ml4.durationOut,
-		easing: "easeInExpo",
-		delay: ml4.delay,
-	})
-	.add({
-		targets: ".ml4 .letters-2",
-		opacity: ml4.opacityIn,
-		scale: ml4.scaleIn,
-		duration: ml4.smallDurationIn,
-	})
-	.add({
-		targets: ".ml4 .letters-2",
-		opacity: 0,
-		scale: ml4.scaleOut,
-		duration: ml4.durationOut,
-		easing: "easeInExpo",
-		delay: ml4.delay,
-	})
-	.add({
-		targets: ".ml4 .letters-3",
-		opacity: ml4.opacityIn,
-		scale: ml4.scaleIn,
-		duration: ml4.smallDurationIn,
-	})
-	.add({
-		targets: ".ml4 .letters-3",
-		opacity: 0,
-		scale: ml4.scaleOut,
-		duration: ml4.durationOut,
-		easing: "easeInExpo",
-		delay: ml4.delay,
-	})
-	.add({
-		targets: ".ml4 .letters-4",
-		opacity: ml4.opacityIn,
-		scale: ml4.scaleIn,
-		duration: ml4.durationIn,
-	});
+window.addEventListener("load", () => {
+	anime
+		.timeline({ loop: false })
+		.add({
+			targets: ".ml4 .letters-1",
+			opacity: ml4.opacityIn,
+			scale: ml4.scaleIn,
+			duration: ml4.durationIn,
+		})
+		.add({
+			targets: ".ml4 .letters-1",
+			opacity: 0,
+			scale: ml4.scaleOut,
+			duration: ml4.durationOut,
+			easing: "easeInExpo",
+			delay: ml4.delay,
+		})
+		.add({
+			targets: ".ml4 .letters-2",
+			opacity: ml4.opacityIn,
+			scale: ml4.scaleIn,
+			duration: ml4.smallDurationIn,
+		})
+		.add({
+			targets: ".ml4 .letters-2",
+			opacity: 0,
+			scale: ml4.scaleOut,
+			duration: ml4.durationOut,
+			easing: "easeInExpo",
+			delay: ml4.delay,
+		})
+		.add({
+			targets: ".ml4 .letters-3",
+			opacity: ml4.opacityIn,
+			scale: ml4.scaleIn,
+			duration: ml4.smallDurationIn,
+		})
+		.add({
+			targets: ".ml4 .letters-3",
+			opacity: 0,
+			scale: ml4.scaleOut,
+			duration: ml4.durationOut,
+			easing: "easeInExpo",
+			delay: ml4.delay,
+		})
+		.add({
+			targets: ".ml4 .letters-4",
+			opacity: ml4.opacityIn,
+			scale: ml4.scaleIn,
+			duration: ml4.durationIn,
+		});
+});
 
 document.querySelector(".ml1 .letters").innerHTML = document
 	.querySelector(".ml1 .letters")
