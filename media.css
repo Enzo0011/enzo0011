@@ -36,3 +36,38 @@
 		font-size: 1.7vh;
 	}
 }
+
+@media (max-height: 700px) {
+	.ml7 {
+		margin-bottom: -20px;
+	}
+
+	.top-comp {
+		top: 5%;
+	}
+
+	.bottom-comp {
+		bottom: 5%;
+	}
+}
+
+@media (max-height: 600px) {
+	.ml7 {
+		margin-bottom: -30px;
+	}
+
+	.top-comp {
+		top: 0;
+	}
+
+	.bottom-comp {
+		bottom: 0;
+	}
+}
+
+@media (max-height: 550px) {
+	.ml7 {
+		margin-bottom: -30px;
+		margin-top: 10px;
+	}
+}
