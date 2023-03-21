@@ -29,9 +29,9 @@
 	.bottom-comp > * {
 		margin: 8px 0;
 	}
-	/* .ml3 + .content-subtitle {
-		margin-top: -40px;
-	} */
+	.ml3 {
+		margin-bottom: 0;
+	}
 	.ml3 ~ .content-subtitle:nth-child(-n + 5) {
 		font-size: 1.7vh;
 	}
