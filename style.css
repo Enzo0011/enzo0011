@@ -288,6 +288,13 @@ a:hover {
 	transform: translateY(15vh);
 }
 
+#mentions {
+	position: absolute;
+	bottom: 100px;
+	translate: -50% -50%;
+	left: 50%;
+}
+
 .tooltip {
 	display: inline-block;
 	position: absolute;
