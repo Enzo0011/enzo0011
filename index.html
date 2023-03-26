@@ -335,6 +335,10 @@
 			document.addEventListener("swiped-down", (e) => goTo(current - 1));
 			document.addEventListener("swiped-up", (e) => goTo(current + 1));
 			document.addEventListener("swipe-left", (e) => goTo(6));
+			document.onkeydown = (e) => {
+				if (e.keyCode === 38) goTo(current - 1);
+				if (e.keyCode === 40) goTo(current + 1);
+			};
 		</script>
 	</body>
 </html>
