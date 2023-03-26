@@ -221,6 +221,7 @@ function previousItem() {
 
 function goTo(dest) {
 	if (dest >= total) return;
+	if (dest < 0) return;
 	if (current < dest) {
 		for (i = current; i < dest; i++) {
 			current++;
