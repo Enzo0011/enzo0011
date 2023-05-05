@@ -7,7 +7,7 @@ body {
 
 body {
 	margin: 0;
-	background-color: #011832;
+	background-color: #325277;
 	font-family: Jura;
 	color: #fff;
 }
@@ -38,6 +38,10 @@ a:hover {
 	to {
 		-webkit-mask-position: -50%;
 	}
+}
+
+.loading {
+	filter: blur(50px);
 }
 
 .center {

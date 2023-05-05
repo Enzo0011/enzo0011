@@ -9,6 +9,12 @@ ml4.delay = 300;
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+document.addEventListener("DOMContentLoaded", function () {
+	Array.from(document.getElementsByClassName("loading")).forEach((i) => {
+		i.classList.remove("loading");
+	});
+});
+
 window.addEventListener("load", () => {
 	anime
 		.timeline({ loop: false })
