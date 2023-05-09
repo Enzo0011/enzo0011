@@ -243,7 +243,7 @@ const comp = [
 	"<u>HTML</u> est la base de n'importe quel site internet, c'est donc par cela que j'ai commencé.",
 	"Le HTML n'est pas très élégant seul, alors j'y met du style avec <u>CSS</u>, un peu répétitif, donc j'ai appris le Sass.",
 	"Pour animer tout ça rien de mieux qu'une bonne connaissance en <u>Javascript</u>, je maitrise jQuery, Ajax et d'autres, mais le <u>Javascript</u> natif est tout aussi intuitif.",
-	"Et pour le back-end ? J'utilise <u>Node.js</u> comme API, ou comme langage de scripting très réglièrement.",
+	"Et pour le back-end ? J'utilise <u>Node.js</u> comme API, ou comme langage de scripting très régulièrement.",
 	"J'apprend de jours en jours à utiliser ReactJS, mais je reste ouvert à l'apprentissage de ses concurrents notament Angular et VueJS",
 	"La plupart des sites utilisent encore <u>PHP</u>, il est important de le maitriser.",
 	"Qui n'a jamais appris <u>Python</u> ? Toujours utile pour les petites automatisations!",
