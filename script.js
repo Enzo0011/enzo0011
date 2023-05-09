@@ -1,4 +1,4 @@
-var ml4 = {};
+let ml4 = {};
 ml4.opacityIn = [0, 1];
 ml4.scaleIn = [0.2, 1];
 ml4.scaleOut = 3;
@@ -146,7 +146,7 @@ function startAnimation() {
 	});
 }
 
-var ticking = false,
+let ticking = false,
 	isFirefox = /Firefox/i.test(navigator.userAgent),
 	isIe =
 		/MSIE/i.test(navigator.userAgent) ||
@@ -191,17 +191,17 @@ function slideTimeout(slideDuration) {
 	}, slideDuration);
 }
 
-var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
+let mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
 window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
 
 function nextItem() {
-	var $previousSlide = $(".background").eq(current - 1);
+	let $previousSlide = $(".background").eq(current - 1);
 	$previousSlide.removeClass("up-scroll").addClass("down-scroll");
 	startAnimation();
 }
 
 function previousItem() {
-	var $currentSlide = $(".background").eq(current);
+	let $currentSlide = $(".background").eq(current);
 	$currentSlide.removeClass("down-scroll").addClass("up-scroll");
 	setTimeout(startAnimation, 1000);
 }
@@ -222,10 +222,10 @@ function goTo(dest) {
 	}
 }
 
-var visible = false;
+let visible = false;
 
 function showMenu() {
-	var menu = document.getElementsByClassName("menu")[0];
+	let menu = document.getElementsByClassName("menu")[0];
 	if (!visible) {
 		visible = !visible;
 		menu.style.animationPlayState = "paused";
