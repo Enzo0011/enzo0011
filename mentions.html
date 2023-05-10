@@ -39,6 +39,7 @@
 				background-size: cover;
 				background-position: center;
 				overflow: hidden;
+				z-index: 1;
 			}
 			.h-nav .h-nav__inner {
 				z-index: 1;
@@ -77,6 +78,7 @@
 			}
 			.hideme {
 				opacity: 0;
+				transition: 1.5s;
 			}
 		</style>
 	</head>
@@ -239,39 +241,31 @@
 			<a href="https://enzo0011.github.io/enzo0011/">Retour au site</a>
 		</div>
 	</body>
-	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<script>
-		var hShinker = () => {
-			var h = $(".h-nav"),
-				hHeight = $(".h-nav").outerHeight(true);
-			$(h).parent().css("padding-top", hHeight);
-			$(window).scroll(() => {
-				var scrollOffset = $(window).scrollTop();
-				if (scrollOffset < hHeight) {
-					$(h).css("height", hHeight - scrollOffset);
-				}
-				if (scrollOffset > hHeight - 215) {
-					h.addClass("fix");
-				} else {
-					h.removeClass("fix");
-				}
-			});
-		};
-		hShinker();
-	</script>
-	<script>
-		$(document).ready(() => {
-			$(window).scroll(() => {
-				$(".hideme").each(function (i) {
-					var bottom_of_object =
-						$(this).position().top + $(this).outerHeight();
-					var bottom_of_window =
-						$(window).scrollTop() + $(window).height();
+		(() => {
+			let h = document.querySelector(".h-nav"),
+				hHeight = h.offsetHeight;
+			document.body.style.paddingTop = hHeight + "px";
+			window.onscroll = () => {
+				document.querySelectorAll(".hideme").forEach((i) => {
+					let bottom_of_object =
+						i.offsetTop + i.getBoundingClientRect().height;
+					let bottom_of_window = window.scrollY + window.innerHeight;
 					if (bottom_of_window > bottom_of_object) {
-						$(this).animate({ opacity: "1" }, 1500);
+						i.style.opacity = "1";
 					}
 				});
-			});
-		});
+				let scrollOffset = window.scrollY;
+				if (scrollOffset < hHeight) {
+					document.querySelector(".h-nav").style.height =
+						hHeight - scrollOffset + "px";
+				}
+				if (scrollOffset > hHeight - 215) {
+					h.classList.add("fix");
+				} else {
+					h.classList.remove("fix");
+				}
+			};
+		})();
 	</script>
 </html>
