@@ -370,3 +370,13 @@ a:hover {
 	cursor: pointer;
 	transition: 0.4s;
 }
+
+.cv {
+	width: 250px;
+	clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+	transition: clip-path 1s;
+}
+
+.cv:hover {
+	clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}

@@ -154,7 +154,7 @@ let ticking = false,
 	scrollSens = 30,
 	slideTime = 500,
 	current = 0,
-	total = $(".background").length;
+	total = document.querySelectorAll(".background").length;
 
 function parallaxScroll(evt) {
 	if (isFirefox) {
@@ -195,14 +195,18 @@ let mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
 window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
 
 function nextItem() {
-	let $previousSlide = $(".background").eq(current - 1);
-	$previousSlide.removeClass("up-scroll").addClass("down-scroll");
+	let previousSlide =
+		document.querySelectorAll(".background")[current - 1].classList;
+	previousSlide.remove("up-scroll");
+	previousSlide.add("down-scroll");
 	startAnimation();
 }
 
 function previousItem() {
-	let $currentSlide = $(".background").eq(current);
-	$currentSlide.removeClass("down-scroll").addClass("up-scroll");
+	let currentSlide =
+		document.querySelectorAll(".background")[current].classList;
+	currentSlide.remove("down-scroll");
+	currentSlide.add("up-scroll");
 	setTimeout(startAnimation, 1000);
 }
 
